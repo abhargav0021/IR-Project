@@ -32,7 +32,7 @@ public class Porter {
      String temp = "";
 
      for ( int i=0; i < last; i++ ) {
-         if ( ch.isLetterOrDigit( str.charAt(i) ) )
+         if ( Character.isLetterOrDigit( str.charAt(i) ) )
             temp += str.charAt(i);
      }
    
