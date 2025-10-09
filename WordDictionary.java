@@ -1,22 +1,38 @@
 import java.util.*;
 
 public class WordDictionary {
+    private Set<String> vocabulary; // Temporary storage for unique words
     private Map<String, Integer> wordToId;
-    private int nextId;
+    private Map<Integer, String> idToWord;
 
     public WordDictionary() {
+        this.vocabulary = new HashSet<>();
         this.wordToId = new LinkedHashMap<>();
-        this.nextId = 1;
+        this.idToWord = new LinkedHashMap<>();
     }
 
-    public int getOrAddWord(String word) {
-        if (!wordToId.containsKey(word)) {
-            wordToId.put(word, nextId++);
+    // Step 1: Add words during parsing (no IDs yet)
+    public void addWordToVocab(String word) {
+        vocabulary.add(word);
+    }
+
+    // Step 2: After all documents processed, sort & assign IDs
+    public void finalizeIds() {
+        List<String> sortedWords = new ArrayList<>(vocabulary);
+        Collections.sort(sortedWords);
+        int id = 1;
+        for (String w : sortedWords) {
+            wordToId.put(w, id);
+            idToWord.put(id, w);
+            id++;
         }
-        return wordToId.get(word);
     }
 
     public Map<String, Integer> getDictionary() {
         return wordToId;
+    }
+
+    public String getWordById(int id) {
+        return idToWord.get(id);
     }
 }
