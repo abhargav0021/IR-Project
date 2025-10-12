@@ -1,4 +1,4 @@
-## Information Retrieval Project.
+## Information Retrieval Project - Bhargav Alimili.
 
 ## Overview
 1.It is a project that deploys a simple Information Retrieval system in Java. It includes:
