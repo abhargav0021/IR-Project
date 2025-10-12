@@ -87,12 +87,12 @@ public class TextParser {
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 
         // Write Word Dictionary (alphabetically sorted IDs)
-        writer.write("=== WORD DICTIONARY ===\n");
+        writer.write("--- WORD DICTIONARY ---\n");
         for (Map.Entry<String, Integer> entry : wordDict.getDictionary().entrySet()) {
             writer.write(entry.getKey() + "\t" + entry.getValue() + "\n");
         }
 
-        writer.write("\n=== FILE DICTIONARY ===\n");
+        writer.write("\n--- FILE DICTIONARY ---\n");
         for (Map.Entry<String, Integer> entry : fileDict.getDictionary().entrySet()) {
             writer.write(entry.getKey() + "\t" + entry.getValue() + "\n");
         }

@@ -11,12 +11,12 @@ public class WordDictionary {
         this.idToWord = new LinkedHashMap<>();
     }
 
-    // Step 1: Add words during parsing (no IDs yet)
+    //Add words during parsing (no IDs yet)
     public void addWordToVocab(String word) {
         vocabulary.add(word);
     }
 
-    // Step 2: After all documents processed, sort & assign IDs
+    //After all documents processed, sort & assign IDs
     public void finalizeIds() {
         List<String> sortedWords = new ArrayList<>(vocabulary);
         Collections.sort(sortedWords);
